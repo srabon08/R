@@ -1,4 +1,4 @@
- PROJECT NAME: Practice_Data_Wrangling -----------------------------------
+ PROJECT NAME: Project Name -----------------------------------------------
 
 
 # Install packages --------------------------------------------------------
@@ -71,12 +71,12 @@ library(cowplot)
 
 # Set working directory ---------------------------------------------------
 
-# setwd("C:/Users/16004185/OneDrive - bioMerieux/Documents/R") # go to home directory
+# setwd("C:/R") # go to home directory
 
-# dir.create("C:/Users/16004185/OneDrive - bioMerieux/Documents/R/Project_Name") # create new directory for this project
-# file.exists("C:/Users/16004185/OneDrive - bioMerieux/Documents/R/Project_Name") # check if the directory R exists
+# dir.create("C:/R/Project_Name") # create new directory for this project
+# file.exists("C:/R/Project_Name") # check if the directory R exists
 
-setwd("C:/Users/16004185/OneDrive - bioMerieux/Documents/R/R_data_wrangling") # set new home directory
+setwd("C:/R/R_data_wrangling") # set new home directory
 getwd() # Check current directory location
 
 
