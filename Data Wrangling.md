@@ -130,3 +130,10 @@ OR
 mtcars_new <- mtcars %>% 
 mutate(kpl = mpg *0.425) #mpg to km/L
 ```
+
+OR (multiple criteria)
+
+```js
+mtcars_new <- mtcars %>% 
+mutate(kpl = mpg *0.425, kw= hp *1.341) #mpg to km/L and HP to KW
+```
