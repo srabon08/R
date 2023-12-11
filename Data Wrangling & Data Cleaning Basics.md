@@ -44,5 +44,23 @@ Hadley Wickham, one of the authors of **dplyr**, has identified **five verbs** f
 > Note: The function `sort()` will sort a vector, but not a data frame. The function that will sort a data frame is called `arrange()`
 
 
+#### Examples:
+
+```js
+load(tidyverse) #load tidyverse package
+data("mtcars") # load mtcars dataset from the tidyverse package
+```
+
+ > Select()
+
+The first argument to the `select()` function is the `data frame`, followed by an arbitrarily long list of `column names`, separated by commas. 
+Note: It is not necessary to wrap the column names in quotation marks.
+
+
+```js
+select(mtcars, mpg, cyl)
+```
+
+
 
 
