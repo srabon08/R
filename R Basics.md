@@ -9,16 +9,23 @@
 |  ``dplyr::select`  | Use a particular function from a package (i.e. **select** function for **dplyr** package |
 |  `data(dataset name)` | Load a built-in dataset into the environment| `data(iris)`|
 
+---
 
 ### Set Working Directory (where inputs are found and outputs are sent)
 
 | **Command** | **Functions** |
 | --- | --- |
-| `getwd()`| Find the current working directory|
-| `setwd("C:/Users/Documents/R")`| Change the current directory to C:/Users/Documents/R|`|
-|`set("..")`| Move one directory up|
-|`dir.create("C:/Users/Documents/R/New_Project")`| To create new folder "New_Project" to store project data |
-|`file.exists("C:/Users/Documents/R/Project_Name")`| To make sure if the folder exists|
+| getwd()`| Find the current working directory |
+| `setwd("C:/Users/Documents/R")`| Change the current directory to C:/Users/Documents/R|` |
+| `set("..")`| Move one directory up |
+| `dir.create("C:/Users/Documents/R/New_Project")` | To create new folder "New_Project" to store project data |
+| `file.exists("C:/Users/Documents/R/Project_Name")` | To make sure if the folder exists |
+
+```js
+getwd() #get the location of the current WD
+dir.create("C:/Users/Documents/R") #create new WD
+  setwd("C:/Users/Documents/R") #set the location of WD
+```
 
 Note: Use the `if (codition){do something} else{do soemthing different}` function to create and set WD to save time
 
@@ -29,5 +36,55 @@ if(file.exists("C:/Users/Documents/R")){
 dir.create("C:/Users/Documents/R")
   setwd("C:/Users/Documents/R")
 }
+```
+---
+
+### Load data
+
+#### Excel: Use any of the following depending on file type
+
+``` js
+read.csv(“type_filename_here”) # Importing csv file`
+```
+OR
+``` js
+read.csv(“type_filename_here.csv”) # Importing csv file` 
+```
+OR
+``` js
+read_excel(“type_filename_here.xls”) # To import xls files` 
+```
+OR
+``` js
+read_excel(“type_filename_here.xlsx”) # To import xlsx files` 
+```
+OR
+``` js
+read_excel(“type_filename_here”, sheet = 2) # To import an xls file stored in a particular sheet number (for example, sheet number 2)` 
+```
+OR
+``` js
+read_excel(“type_filename_here”, sheet = students) # To import an xlsx file stored in a particular sheet name (for example, sheet named students)` 
+```
+
+#
+
+# Load data from R packages
+
+```js
+library(ggplot2) #load ggplot2 library
+ls(package:ggplot2) #list all packages under ggplot2
+mpg #load mpg dataset from ggplot2 package/make sure library is loaded
+view(mpg) # To open the dataset/Table in a separate page in tabular format
+```
+OR 
+```js
+data() # opens a tab/window listing all the built-in datasets
+data(package= "ggplot2") # opens a tab/window listing all avaialable datasets in ggplot2 package
+```
+OR
+
+```js
+load ("data_name.RData") #importing R data files. Prior to loading, clear all objects currently within the workspace to avoid overwrite.
 ```
 
