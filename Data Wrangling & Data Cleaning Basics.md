@@ -20,10 +20,10 @@ The main difference between data wrangling and data cleaning is that data wrangl
 | tidyr       | Data reshaping |
 | stringr     | String manipulation |
 | lubridate   | Date and time manipulation |
-| purr     | Functional programming |
-| forcats   | Factor manipulation |
-| readr    | Data import |
-| tibble   | Data frame creation |
+| purr        | Functional programming |
+| forcats     | Factor manipulation |
+| readr       | Data import |
+| tibble      | Data frame creation |
 
 * If you are working with tabular data and need to manipulate it, dplyr is the way to go. On the other hand, if you need to reshape your data, tidyr is the package you should use. If you are using Tidyverse, no need to load dplyr or tidyr separately.
    
@@ -58,7 +58,7 @@ data("mtcars") # load mtcars dataset from the tidyverse package
  > `select()`
 
 The first argument to the `select()` function is the `data frame`, followed by an arbitrarily long list of `column names`, separated by commas. 
-Note: It is not necessary to wrap the column names in quotation marks.
+Note: It is not necessary to wrap the column names in quotation marks. However, try using pipe-forwarding nesting to make it more readable. 
 
 OR
 
@@ -79,7 +79,7 @@ select(mpg, cyl, hp)
  > `filter()`
 
 the first argument to filter() is a `data frame`, and subsequent arguments are `logical conditions` that are evaluated on any **involved columns**. 
-Note that the == is a test for equality. 
+Note: == is a test for equality. However, try using pipe-forwarding nesting to make it more readable. 
 
 ```js
 filter (mtcars, mpg > 19 & cyl == "6")
@@ -105,4 +105,28 @@ OR
 mtcars %>% 
 filter(mpg>19 & cyl == "6") %>%
 select(hp)
+```
+---
+
+> `mutate()` and `rename()`
+
+`mutate()` creates new columns that are functions of existing variables. 
+
+The first argument to mutate() is a `data frame`, and subsequent arguments are `logical conditions` that are evaluated on any **involved columns**. 
+However, try using pipe-forwarding nesting to make it more readable. 
+
+Note: 
+* It can modify (if the name is the same as an existing column) and delete columns (by setting their value to NULL). So, in order to keep both column make sure to give the new column a unique name. This can be helpful to modify existing column.
+
+* To preserve the existing dataframe, save the result of `mutate()` as a new object. 
+
+```js
+mtcars_new <- mutate(mtcars, kpl = mpg *0.425) #mpg to km/L
+```
+
+OR
+
+```js
+mtcars_new <- mtcars %>% 
+mutate(kpl = mpg *0.425) #mpg to km/L
 ```
