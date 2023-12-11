@@ -26,5 +26,5 @@ A tibble is a simplified dataframe in the tidyverse. It makes data manipulation 
 
 ### Tidy data 
 
-Read [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) by Hadley Wickham
+Tidy data is a standard way of organizing data values within a dataset. Read [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) by Hadley Wickham or a Code heavy version of [Tidy Data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) on CRAN.
 
