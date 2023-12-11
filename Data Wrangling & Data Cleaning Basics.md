@@ -33,6 +33,8 @@ The main difference between data wrangling and data cleaning is that data wrangl
 
 Hadley Wickham, one of the authors of **dplyr**, has identified **five verbs** for working with data in a data frame
 
+Read [Data wrangling](http://mdsr-book.github.io/excerpts/mdsr-dataI.pdf) for more information: 
+
 | Function | Description |
 | --- | --- |
 | `select()` | Take a subset of the columns (i.e., features, variables) |
@@ -44,23 +46,63 @@ Hadley Wickham, one of the authors of **dplyr**, has identified **five verbs** f
 > Note: The function `sort()` will sort a vector, but not a data frame. The function that will sort a data frame is called `arrange()`
 
 
-#### Examples:
+#### Examples: 
+
+Let's use the **mtcars** dataset from the tidyverse package
 
 ```js
 load(tidyverse) #load tidyverse package
 data("mtcars") # load mtcars dataset from the tidyverse package
 ```
 
- > Select()
+ > `select()`
 
 The first argument to the `select()` function is the `data frame`, followed by an arbitrarily long list of `column names`, separated by commas. 
 Note: It is not necessary to wrap the column names in quotation marks.
 
+OR
+
+dataframe %>% select(condition)
 
 ```js
-select(mtcars, mpg, cyl)
+select(mtcars, mpg, cyl, hp)
 ```
 
+OR 
 
+```js
+mtcars %>%
+select(mpg, cyl, hp)
+```
+#
 
+ > `filter()`
 
+the first argument to filter() is a `data frame`, and subsequent arguments are `logical conditions` that are evaluated on any **involved columns**. 
+Note that the == is a test for equality. 
+
+```js
+filter (mtcars, mpg > 19 & cyl == "6")
+```
+
+OR
+
+```js
+mtcars %>%
+filter(mpg > 19 & cyl == "6")
+```
+
+#
+> Combine use of `selct() & filter ()`
+
+```js
+select(filter(mtcars, mpg > 19 & cyl == "6"), hp)
+```
+
+OR
+
+```js
+mtcars %>% 
+filter(mpg>19 & cyl == "6") %>%
+select(hp)
+```
