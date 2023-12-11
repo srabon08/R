@@ -21,3 +21,10 @@ A tibble is a simplified dataframe in the tidyverse. It makes data manipulation 
 
 * Pros: No data type changes, no variable name changes, no row names, won't overload console (automatically set to pull up the first 10 rows and as many column fits in the screen), easy printing
 * Cons: Less flexible than data frames, some differences in syntax and behavior
+
+---
+
+### Tidy data 
+
+Read [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) by Hadley Wickham
+
