@@ -69,11 +69,20 @@ select(mtcars, mpg, cyl, hp)
 ```
 
 OR 
+select speficic column(s)
 
 ```js
 mtcars %>%
 select(mpg, cyl, hp)
 ```
+# 
+ select all but specific columns
+
+ ```js
+mtcars %>%
+select(-mpg, -cyl, -hp)
+```
+
 #
 
  > `filter()`
@@ -108,7 +117,7 @@ select(hp)
 ```
 ---
 
-> `mutate()` and `rename()`
+> `mutate()`
 
 `mutate()` creates new columns that are functions of existing variables. 
 
@@ -130,10 +139,57 @@ OR
 mtcars_new <- mtcars %>% 
 mutate(kpl = mpg *0.425) #mpg to km/L
 ```
-
-OR (multiple criteria)
+#
+multiple criteria
 
 ```js
 mtcars_new <- mtcars %>% 
 mutate(kpl = mpg *0.425, kw= hp *1.341) #mpg to km/L and HP to KW
 ```
+#
+
+use ifelse case#1
+
+* Here, a new column called **engine** will be added to the mtcars data frame, with the value “small” if the cyl is 4, “medium” if the cyl is 6, and “large” otherwise.
+
+```js
+mtcars_new <- mtcars %>% 
+mutate(engine = ifelse(cyl == 4, "small", ifelse(cyl == 6, "medium", "large")))
+```
+
+# 
+
+use ifelse case#2
+
+Here, a new column called **engine_N** will be added to the mtcars_new data frame, with the value “medium” if the cyl is 4-6, otherwise it will remain same as the engine column. 
+
+```js
+mtcars_new <- mtcars_new %>% 
+  mutate(engine_N = ifelse((cyl %in% c(4,6)), "medium", engine))
+```
+#
+
+use case_when
+
+```js
+mtcars_new <- mtcars %>%
+  mutate(performance = case_when(
+    hp > 200 & wt < 3 ~ "high",
+    hp >= 100 & hp <= 200 & wt >= 3 & wt <= 4 ~ "medium",
+    TRUE ~ "low"
+  ))
+```
+
+---
+
+> `rename()`
+
+```js
+mtcars_new <- mtcars %>%
+rename( new_mpg= mpg)
+```
+---
+
+> `arrange()`
+
+The fucntion `sort()` will sort vector, but no a data frame. The function that will sort a data frame is called `arrange()`
