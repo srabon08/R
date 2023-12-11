@@ -1,5 +1,7 @@
 ## Data Wrangling
 
+The main difference between data wrangling and data cleaning is that data wrangling is the process of converting and mapping data from one format to another format to use that data to perform analyzing, but data cleaning is the process of eliminating the incorrect data or to modify them.
+
 | **Package** | **Functions** |
 |-------------|---------------|
 | Tidyverse   | Data manipulation, visualization, and data cleaning |
