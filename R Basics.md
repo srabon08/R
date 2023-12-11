@@ -90,6 +90,7 @@ OR
 ```js
 data() # opens a tab/window listing all the built-in datasets
 data(package= "ggplot2") # opens a tab/window listing all avaialable datasets in ggplot2 package
+data(mtcars) # load specific dataset i.e. mtcars dataset
 ```
 OR
 
