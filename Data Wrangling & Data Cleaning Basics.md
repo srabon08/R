@@ -5,19 +5,28 @@ The main difference between data wrangling and data cleaning is that data wrangl
 | **Package** | **Functions** |
 |-------------|---------------|
 | Tidyverse   | Data manipulation, visualization, and data cleaning |
-| dplyr       | Data manipulation |
-| tidyr       | Data reshaping |
 | data.table  | Fast and memory-efficient data manipulation |
-| plyr        | Data manipulation |
 | janitor     | Data cleaning |
-| stringr     | String manipulation |
-| lubridate   | Date and time manipulation |
 | readxl      | Makes it easy to get data in and out of Excel and into R | 
 
-> Note: 
-* If you are working with tabular data and need to manipulate it, dplyr is the way to go. On the other hand, if you need to reshape your data, tidyr is the package you should use. 
-* The readr package is part of the core tidyverse.
 
+> Note: 
+
+* The following packages are part of the core tidyverse:
+  
+| **Package** | **Functions** |
+|-------------|---------------|
+| dplyr       | Data manipulation |
+| tidyr       | Data reshaping |
+| stringr     | String manipulation |
+| lubridate   | Date and time manipulation |
+| purr     | String manipulation |
+| forcats   | Date and time manipulation |
+| readr    | String manipulation |
+| tibble   | Date and time manipulation |
+
+* If you are working with tabular data and need to manipulate it, dplyr is the way to go. On the other hand, if you need to reshape your data, tidyr is the package you should use. If you are using Tidyverse, no need to load dplyr or tidyr separately.
+   
 ---
 
 ### Grammer of data wrangling: 
