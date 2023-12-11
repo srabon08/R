@@ -12,6 +12,7 @@ The main difference between data wrangling and data cleaning is that data wrangl
 | janitor     | Data cleaning |
 | stringr     | String manipulation |
 | lubridate   | Date and time manipulation |
+| readxl      | Makes it easy to get data in and out of Excel and into R | 
 
 > Note: 
 * If you are working with tabular data and need to manipulate it, dplyr is the way to go. On the other hand, if you need to reshape your data, tidyr is the package you should use. 
