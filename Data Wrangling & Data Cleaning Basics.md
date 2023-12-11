@@ -6,8 +6,8 @@ The main difference between data wrangling and data cleaning is that data wrangl
 |-------------|---------------|
 | Tidyverse   | Data manipulation, visualization, and data cleaning |
 | data.table  | Fast and memory-efficient data manipulation |
-| janitor     | Data cleaning |
-| readxl      | Makes it easy to get data in and out of Excel and into R | 
+| janitor     | Data cleaning and formatting |
+| readxl      | Excel file import | 
 
 
 > Note: 
@@ -20,10 +20,10 @@ The main difference between data wrangling and data cleaning is that data wrangl
 | tidyr       | Data reshaping |
 | stringr     | String manipulation |
 | lubridate   | Date and time manipulation |
-| purr     | String manipulation |
-| forcats   | Date and time manipulation |
-| readr    | String manipulation |
-| tibble   | Date and time manipulation |
+| purr     | Functional programming |
+| forcats   | Factor manipulation |
+| readr    | Data import |
+| tibble   | Data frame creation |
 
 * If you are working with tabular data and need to manipulate it, dplyr is the way to go. On the other hand, if you need to reshape your data, tidyr is the package you should use. If you are using Tidyverse, no need to load dplyr or tidyr separately.
    
@@ -42,5 +42,7 @@ Hadley Wickham, one of the authors of **dplyr**, has identified **five verbs** f
 | `summarize()` | Aggregate the data across rows (e.g., group it according to some criteria) |
 
 > Note: The function `sort()` will sort a vector, but not a data frame. The function that will sort a data frame is called `arrange()`
+
+
 
 
