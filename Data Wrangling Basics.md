@@ -193,3 +193,33 @@ rename( new_mpg= mpg)
 > `arrange()`
 
 The fucntion `sort()` will sort vector, but no a data frame. The function that will sort a data frame is called `arrange()`
+
+
+Ascending
+
+```js
+mtcars_new <- mtcars %>%
+arrange( gear)
+```
+#
+Descending
+
+```js
+mtcars_new <- mtcars %>%
+arrange( desc (gear))
+```
+OR
+```js
+mtcars_new <- mtcars %>%
+arrange(-gear))
+```
+#
+Combination
+
+```js
+mtcars_new <- mtcars %>%
+  arrange(desc(gear), cyl, carb)
+```
+---
+
+> `summarize()` with `group_by()
