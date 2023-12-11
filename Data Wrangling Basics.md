@@ -218,8 +218,32 @@ Combination
 
 ```js
 mtcars_new <- mtcars %>%
-  arrange(desc(gear), cyl, carb)
+  arrange(desc(gear),
+ cyl,
+carb)
 ```
 ---
 
 > `summarize()` with `group_by()
+
+```js
+mmtcars %>%
+  group_by(cyl) %>%
+  summarize(mean_mpg = mean(mpg), median_mpg = median(mpg))
+```
+
+# 
+If data has NA, you can use the drop_na fucntion
+
+using: 
+library(tidyverse)
+data(msleep)
+
+```js
+msleep %>% 
+  drop_na(sleep_rem, vore) %>%  #sleep_total has no NA
+  group_by(vore) %>%
+  summarize('Average total sleep' = mean(sleep_total),
+            'Maximum rem sleep' = max(sleep_rem))
+            ```
+
