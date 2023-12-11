@@ -245,5 +245,5 @@ msleep %>%
   group_by(vore) %>%
   summarize('Average total sleep' = mean(sleep_total),
             'Maximum rem sleep' = max(sleep_rem))
-            ```
+```
 
