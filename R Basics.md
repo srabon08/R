@@ -39,7 +39,7 @@ dir.create("C:/Users/Documents/R")
 ```
 ---
 
-### Load data
+### Read data
 
 #### Excel: Use any of the following depending on file type
 
@@ -103,5 +103,9 @@ load ("data_name.RData") #importing R data files. Prior to loading, clear all ob
 df <- read_table (“type_filename_here.txt”) # To import table ffrom text files
 ```
 ---
+
+### Save Data
+
+
 
 
