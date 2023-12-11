@@ -29,3 +29,4 @@ Hadley Wickham, one of the authors of **dplyr**, has identified **five verbs** f
 
 > Note: The function `sort()` will sort a vector, but not a data frame. The function that will sort a data frame is called `arrange()`
 
+
