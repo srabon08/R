@@ -14,6 +14,7 @@ The main difference between data wrangling and data cleaning is that data wrangl
 | lubridate   | Date and time manipulation |
 
 > Note: If you are working with tabular data and need to manipulate it, dplyr is the way to go. On the other hand, if you need to reshape your data, tidyr is the package you should use.
+> The readr package is part of the core tidyverse.
 
 ### Grammer of data wrangling: 
 
