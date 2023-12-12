@@ -105,17 +105,6 @@ df <- read_table (“type_filename_here.txt”) # To import table ffrom text fil
 ```
 ---
 
-### Convert Datafram  to Tibble:;
-
-```js
-as_tibble(iris)  #conver iris dataset into a Tibble
-```
-### Convert tibble to datafram
-
-```js
-as.data.frame(table1)
-```
-Note: Be careful to use as.data.frame() and not as_data_frame(), which is an alias for as_tibble().
 
 
 
