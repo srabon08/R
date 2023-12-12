@@ -28,3 +28,20 @@ A tibble is a simplified dataframe in the tidyverse. It makes data manipulation 
 
 Tidy data is a standard way of organizing data values within a dataset. Read [Tidy Data](https://vita.had.co.nz/papers/tidy-data.pdf) by Hadley Wickham or a Code heavy version of [Tidy Data](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) on CRAN.
 
+### Convert Datafram  to Tibble:;
+
+```js
+as_tibble(iris)  #conver iris dataset into a Tibble
+```
+### Convert tibble to datafram
+
+```js
+as.data.frame(table1)
+```
+Note: Be careful to use as.data.frame() and not as_data_frame(), which is an alias for as_tibble().
+
+When you call a tibble directly, R will display enough information to give you a quick sense of the contents of the tibble. This includes:
+
+* the dimensions of the tibble
+* the column names and types
+* as many cells of the tibble as will fit comfortably in your console window
