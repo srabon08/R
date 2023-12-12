@@ -8,7 +8,7 @@ The main difference between data wrangling and data cleaning is that data wrangl
 | data.table  | Fast and memory-efficient data manipulation |
 | janitor     | Data cleaning and formatting |
 | readxl      | Excel file import | 
-
+| skimr       | produce copact aand flexible summaries of dataframes, tibbles, data tables and vectors |
 
 > Note: 
 
