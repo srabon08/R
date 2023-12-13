@@ -10,7 +10,6 @@ The main difference between data wrangling and data cleaning is that data wrangl
 | readxl      | Excel file import | 
 | skimr       | produce copact aand flexible summaries of dataframes, tibbles, data tables and vectors |
 
-> Note: 
 
 * The following packages are part of the core tidyverse:
   
@@ -45,45 +44,42 @@ Read [Data wrangling](http://mdsr-book.github.io/excerpts/mdsr-dataI.pdf) for mo
 
 > Note: The function `sort()` will sort a vector, but not a data frame. The function that will sort a data frame is called `arrange()`
 
-
+---
 #### Examples: 
 
 Let's use the **mtcars** dataset from the tidyverse package
+
 
 ```js
 load(tidyverse) #load tidyverse package
 data("mtcars") # load mtcars dataset from the tidyverse package
 ```
 
+#
+
  > `select()`
 
 The first argument to the `select()` function is the `data frame`, followed by an arbitrarily long list of `column names`, separated by commas. 
-Note: It is not necessary to wrap the column names in quotation marks. However, try using pipe-forwarding nesting to make it more readable. 
+Note: 
+* It is not necessary to wrap the column names in quotation marks. However, try using    pipe-forwarding nesting to make it more readable.
+* select() is also part of the MASS package. To avoid having errors, while using both dplyr and MASS package instead of using slect() use package specific fucntion i.e. dplyr::selec()
 
-OR
-
-dataframe %>% select(condition)
 
 ```js
 select(mtcars, mpg, cyl, hp)
 ```
 
 OR 
-select speficic column(s)
+
 
 ```js
 mtcars %>%
 select(mpg, cyl, hp)
 ```
-# 
- select all but specific columns
 
- ```js
-mtcars %>%
-select(-mpg, -cyl, -hp)
-```
+> see more on select function here
 
-#
+---
 
  > `filter()`
 
@@ -100,21 +96,8 @@ OR
 mtcars %>%
 filter(mpg > 19 & cyl == "6")
 ```
+> see more on filter() function here
 
-#
-> Combine use of `selct() & filter ()`
-
-```js
-select(filter(mtcars, mpg > 19 & cyl == "6"), hp)
-```
-
-OR
-
-```js
-mtcars %>% 
-filter(mpg>19 & cyl == "6") %>%
-select(hp)
-```
 ---
 
 > `mutate()`
@@ -139,55 +122,8 @@ OR
 mtcars_new <- mtcars %>% 
 mutate(kpl = mpg *0.425) #mpg to km/L
 ```
-#
-multiple criteria
 
-```js
-mtcars_new <- mtcars %>% 
-mutate(kpl = mpg *0.425, kw= hp *1.341) #mpg to km/L and HP to KW
-```
-#
-
-use ifelse case#1
-
-* Here, a new column called **engine** will be added to the mtcars data frame, with the value “small” if the cyl is 4, “medium” if the cyl is 6, and “large” otherwise.
-
-```js
-mtcars_new <- mtcars %>% 
-mutate(engine = ifelse(cyl == 4, "small", ifelse(cyl == 6, "medium", "large")))
-```
-
-# 
-
-use ifelse case#2
-
-Here, a new column called **engine_N** will be added to the mtcars_new data frame, with the value “medium” if the cyl is 4-6, otherwise it will remain same as the engine column. 
-
-```js
-mtcars_new <- mtcars_new %>% 
-  mutate(engine_N = ifelse((cyl %in% c(4,6)), "medium", engine))
-```
-#
-
-use case_when
-
-```js
-mtcars_new <- mtcars %>%
-  mutate(performance = case_when(
-    hp > 200 & wt < 3 ~ "high",
-    hp >= 100 & hp <= 200 & wt >= 3 & wt <= 4 ~ "medium",
-    TRUE ~ "low"
-  ))
-```
-
----
-
-> `rename()`
-
-```js
-mtcars_new <- mtcars %>%
-rename( new_mpg= mpg)
-```
+> see more on mutate() function here
 ---
 
 > `arrange()`
@@ -195,33 +131,11 @@ rename( new_mpg= mpg)
 The fucntion `sort()` will sort vector, but no a data frame. The function that will sort a data frame is called `arrange()`
 
 
-Ascending
-
 ```js
 mtcars_new <- mtcars %>%
 arrange( gear)
 ```
-#
-Descending
-
-```js
-mtcars_new <- mtcars %>%
-arrange( desc (gear))
-```
-OR
-```js
-mtcars_new <- mtcars %>%
-arrange(-gear))
-```
-#
-Combination
-
-```js
-mtcars_new <- mtcars %>%
-  arrange(desc(gear),
- cyl,
-carb)
-```
+> see more on arrange() function here
 ---
 
 > `summarize()` with `group_by()
@@ -231,19 +145,8 @@ mmtcars %>%
   group_by(cyl) %>%
   summarize(mean_mpg = mean(mpg), median_mpg = median(mpg))
 ```
+> see more on summarize() function here
+---
 
-# 
-If data has NA, you can use the drop_na fucntion
 
-using: 
-library(tidyverse)
-data(msleep)
-
-```js
-msleep %>% 
-  drop_na(sleep_rem, vore) %>%  #sleep_total has no NA
-  group_by(vore) %>%
-  summarize('Average total sleep' = mean(sleep_total),
-            'Maximum rem sleep' = max(sleep_rem))
-```
 
