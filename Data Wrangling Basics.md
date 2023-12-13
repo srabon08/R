@@ -24,7 +24,10 @@ The main difference between data wrangling and data cleaning is that data wrangl
 | readr       | Data import |
 | tibble      | Data frame creation |
 
-* If you are working with tabular data and need to manipulate it, dplyr is the way to go. On the other hand, if you need to reshape your data, tidyr is the package you should use. If you are using Tidyverse, no need to load dplyr or tidyr separately.
+Note: 
+* If you are working with tabular data and need to manipulate it, dplyr is the way to go.
+* If you need to reshape your data, tidyr is the package you should use.
+* If you are using Tidyverse, no need to load dplyr or tidyr separately.
    
 ---
 
@@ -42,7 +45,9 @@ Read [Data wrangling](http://mdsr-book.github.io/excerpts/mdsr-dataI.pdf) for mo
 | `arrange()` | Sort the rows |
 | `summarize()` | Aggregate the data across rows (e.g., group it according to some criteria) |
 
-> Note: The function `sort()` will sort a vector, but not a data frame. The function that will sort a data frame is called `arrange()`
+Note: 
+* The function `sort()` will sort a vector, but not a data frame.
+* The function that will sort a data frame is called `arrange()`
 
 ---
 #### Examples: 
@@ -62,7 +67,7 @@ data("mtcars") # load mtcars dataset from the tidyverse package
 The first argument to the `select()` function is the `data frame`, followed by an arbitrarily long list of `column names`, separated by commas. 
 Note: 
 * It is not necessary to wrap the column names in quotation marks. However, try using    pipe-forwarding nesting to make it more readable.
-* select() is also part of the MASS package. To avoid having errors, while using both dplyr and MASS package instead of using slect() use package specific fucntion i.e. dplyr::selec()
+* select() is also part of the **MASS** package. To avoid having errors, while using both dplyr and MASS package, instead of using select() use package specific fucntion i.e. dplyr::select()
 
 
 ```js
